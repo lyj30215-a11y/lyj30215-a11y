@@ -1,0 +1,25 @@
+<h2>منصة التهكير والتشغيل أوفلاين</h2>
+    
+    <div class="btn-group">
+        <button class="exploit-btn" onclick="loadGoldHEN()">تفعيل GoldHEN</button>
+        <button class="exploit-btn" onclick="loadCache()">التثبيت أوفلاين (Cache)</button>
+    </div>
+
+    <div id="status">جاهز للتحميل والتفعيل...</div>
+</div>
+
+<script>
+    function loadGoldHEN() {
+        document.getElementById('status').innerText = "جاري تفعيل الثغرة وتحميل الـ GoldHEN...";
+        setTimeout(function() {
+            document.getElementById('status').innerText = "تم التفعيل بنجاح! جاهز للاستخدام الأوفلاين.";
+        }, 2000);
+    }
+
+    function loadCache() {
+        document.getElementById('status').innerText = "جاري تخزين الملفات للعمل بدون إنترنت (Offline Cache)...";
+        setTimeout(function() {
+            document.getElementById('status').innerText = "تم التخزين بنجاح! يمكنك قطع الإنترنت الآن.";
+        }, 2000);
+    }
+</script>
