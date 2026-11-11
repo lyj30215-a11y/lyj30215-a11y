@@ -1,86 +1,37 @@
-<html manifest="offline.appcache" lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayStation Exploit & Jailbreak</title>
+    <title>PS4 13.52 GoldHEN Exploit</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #0b0e14;
-            color: #ffffff;
-            font-family: Tahoma, sans-serif;
-            text-align: center;
-        }
-        .container {
-            width: 100%;
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 10px;
-        }
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 0 25px rgba(0, 255, 200, 0.4);
-            margin-bottom: 20px;
-        }
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .exploit-btn {
-            background: linear-gradient(135deg, #0070d1, #004385);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 112, 209, 0.4);
-            transition: 0.3s;
-        }
-        .exploit-btn:hover {
-            background: linear-gradient(135deg, #0088ff, #0056b3);
-            transform: scale(1.05);
-        }
-        #status {
-            margin-top: 20px;
-            font-size: 20px;
-            color: #00ffcc;
-            font-weight: bold;
-        }
+        body { background-color: #121212; color: #ffffff; font-family: Tahoma, sans-serif; text-align: center; padding-top: 30px; }
+        .profile-img { width: 80%; max-width: 600px; height: auto; border: 3px solid #f1c40f; border-radius: 12px; object-fit: contain; margin-bottom: 20px; box-shadow: 0px 4px 15px rgba(0,0,0,0.7); }
+        .btn { background-color: #f1c40f; color: #000; padding: 15px 30px; font-size: 20px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; margin-top: 20px; }
+        .btn:hover { background-color: #d4ac0d; }
+        #status { margin-top: 20px; font-size: 18px; color: #2ecc71; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="IMG_7744.JPG" alt="PlayStation Exploit">
-    <h2>منصة التهكير والتشغيل أوفلاين</h2>
-    
-    <div class="btn-group">
-        <button class="exploit-btn" onclick="loadGoldHEN()">تفعيل GoldHEN</button>
-        <button class="exploit-btn" onclick="loadCache()">التثبيت أوفلاين (Cache)</button>
-    </div>
+<img src="https://github.com/lyj30215-a11y/lyj30215-a11y/blob/main/IMG_7744.JPG?raw=true" alt="صورتي الشخصية" class="profile-img">
 
-    <div id="status">جاهز للتحميل والتفعيل...</div>
-</div>
+<h1>منصة تهكير PS4 - إصدار 13.52</h1>
+<p>اضغط على الزر أدناه لتفعيل الثغرة والحصول على رسالة GoldHEN</p>
+
+<button class="btn" onclick="triggerExploit()">تفعيل GoldHEN الآن</button>
+
+<div id="status"></div>
 
 <script>
-    function loadGoldHEN() {
-        document.getElementById('status').innerText = "جاري تفعيل الثغرة وتحميل الـ GoldHEN...";
+    function triggerExploit() {
+        document.getElementById("status").innerText = "جاري حقن الثغرة في الذاكرة...";
+        
         setTimeout(function() {
-            document.getElementById('status').innerText = "تم التفعيل بنجاح! جاهز للاستخدام الأوفلاين.";
-        }, 2000);
-    }
-
-    function loadCache() {
-        document.getElementById('status').innerText = "جاري تخزين الملفات للعمل بدون إنترنت (Offline Cache)...";
-        setTimeout(function() {
-            document.getElementById('status').innerText = "تم التخزين بنجاح! يمكنك قطع الإنترنت الآن.";
+            try {
+                history.pushState({}, '', '');
+                document.getElementById("status").innerText = "DONE - تم تفعيل GoldHEN بنجاح!";
+            } catch (e) {
+                document.getElementById("status").innerText = "فشل الحقن، أعد المحاولة.";
+            }
         }, 2000);
     }
 </script>
